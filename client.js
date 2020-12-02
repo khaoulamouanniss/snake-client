@@ -13,14 +13,8 @@ const connect = function() {
   conn.on("connect", () => console.log("Successfully connected"));
   conn.on("data", (data) => console.log("Server says : ", data));
   conn.on('connect', () => conn.write('Name: KEL'));
-  /*
-  conn.on('connect', () => conn.write('Move: up'));
-  conn.on('connect', () => setTimeout(function() {conn.write('Move: left');}, 500));
-  conn.on('connect', () => setTimeout(function() {conn.write('Move: up');}, 1000));
-  conn.on('connect', () => setTimeout(function() {conn.write('Move: right');}, 1500));*/
   return conn;
 
 }
+ module.exports = {connect};
 
-console.log('Connecting ...');
-connect();
